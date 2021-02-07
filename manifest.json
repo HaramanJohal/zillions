@@ -1,0 +1,15 @@
+{
+  "name": "Zillions",
+  "version": "1.0",
+  "description": "Finally understand huge numbers",
+  "author": "Haraman Johal",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+        "matches": ["*://*/*"],
+        "all_frames": true,
+        "js": ["content.js"],
+        "run_at": "document_end"
+    }
+  ]
+}
