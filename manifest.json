@@ -6,10 +6,14 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-        "matches": ["*://*/*"],
-        "all_frames": true,
-        "js": ["content.js"],
-        "run_at": "document_end"
+      "matches": ["*://*/*"],
+      "all_frames": true,
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"]
 }

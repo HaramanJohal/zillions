@@ -1,8 +1,12 @@
-const textBlocks = document.querySelectorAll('h1, h2, h3, h4, h5, p, li, td, caption, span, a')
-
-textBlocks.forEach(textBlock => {
-    if (textBlock.innerHTML.includes('million')) {
-        console.log("found a million in", textBlock)
-        textBlock.innerHTML = textBlock.innerHTML.replace("million", "zillion")
-    }
-})
+document.addEventListener("mouseup", function explainer() {
+  let text = "";
+  if (window.getSelection) {
+    text = window.getSelection().toString();
+  } else if (document.selection && document.selection.type != "Control") {
+    text = document.selection.createRange().text;
+  }
+  if (text === "") return;
+  chrome.storage.local.set({"zillionsText": text}, function() {
+    console.log('zillionsText is set to ' + text);
+  });
+});
