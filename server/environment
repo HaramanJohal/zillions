@@ -1,0 +1,2 @@
+export FLASK_APP=hello.py
+export PYTHONDONTWRITEBYTECODE="no byte code, thank you"
