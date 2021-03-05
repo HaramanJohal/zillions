@@ -1,2 +1,2 @@
-export FLASK_APP=hello.py
+export FLASK_APP=zillions/hello.py
 export PYTHONDONTWRITEBYTECODE="no byte code, thank you"

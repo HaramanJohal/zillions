@@ -7,11 +7,5 @@ document.addEventListener("mouseup", function explainer() {
     text = document.selection.createRange().text;
   }
   if (text === "") return;
-  chrome.storage.local.set(
-    { zillionsText: text, zillionsDOM: dom },
-    function () {
-      console.log("zillionsText is set to " + text);
-      console.log("zillionsDOM is set to " + dom);
-    }
-  );
+  chrome.storage.local.set({ zillionsText: text, zillionsDOM: dom });
 });

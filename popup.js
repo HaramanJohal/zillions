@@ -1,6 +1,4 @@
 chrome.storage.local.get(["zillionsText", "zillionsDOM"], function (result) {
-  document.getElementById("text").innerHTML = result.zillionsText;
-
   fetch("http://127.0.0.1:5000/parse", {
     method: "POST",
     headers: {
@@ -12,5 +10,7 @@ chrome.storage.local.get(["zillionsText", "zillionsDOM"], function (result) {
     }),
   })
     .then((data) => data.text())
-    .then((text) => console.log(text));
+    .then((text) => {
+      document.getElementById("text").innerHTML = text;
+    });
 });
